@@ -29,7 +29,7 @@
     <title>Sukuna Secondary School | anupkoirala0</title>
 
     <style>
-        *:not(.navbar-m) {
+        .sneeky-loadout-animation {
             animation: loadout 1s ease-in;
         }
 
@@ -49,6 +49,9 @@
         }
 
         body {
+            cursor: url(/cursor.cur),auto;
+
+            overflow-x: hidden;
             display: flex;
             margin: 0;
             padding: 0;
@@ -86,6 +89,10 @@
             filter: brightness(2px), contrast(100);
 
 
+        }
+        .nav-down{
+            position: sticky;
+            
         }
 
         .nav-bar {
@@ -140,6 +147,12 @@
 
             .navbar-m {
                 display: none;
+            }
+            #myVideo{
+                display: flex;
+            }
+            .iframe-wrapper{
+                display: flex;
             }
         }
 
@@ -209,7 +222,14 @@
 
 
         }
-
+        @media screen and (max-width:500px){
+            #myVideo{
+                display: none;
+            }
+            .iframe-wrapper{
+                display: none;
+            }
+        }
         .ntrwrapper {
             width: 700px;
             align-items: center;
@@ -240,6 +260,7 @@
             box-sizing: border-box;
             padding: 20px clamp(20px, 5vw, 60px);
             box-shadow: 4px 4px 6px grey;
+            background: white;
             z-index: 1;
         }
 
@@ -426,6 +447,9 @@
         .nav-down {
             display: flex;
             background: #15305b;
+            height: max-content;
+            position: sticky;
+            top: 20vh;
         }
 
         .links-wrapper {
@@ -467,7 +491,12 @@
 
 
         }
-
+        .slide-on{
+            animation: .5s ease-in slide-on 1;
+        }
+        .slide-off{
+            animation: .5s ease-in slide-off 1;
+        }
         @keyframes slide-on {
             0% {
                 transform: translate(100%, 0px);
@@ -516,7 +545,7 @@
         }
 
         .fa-regular {
-            padding-right: 10px;
+            padding-right: 1px;
         }
 
         .links-m-wrapper {
@@ -555,24 +584,125 @@
         .cross:hover {
 
             scale: 1.15;
-            color: black;
-            text-shadow: 1px 1px 1px white;
+            color: #ea3232;
+            
         }
 
         .none {
             display: none;
         }
-        .noAnimation{
-            animation: none !important;
-            animation-play-state: paused;
-        }
+        .primaryNotice{
+                    width: 100vw;
+                    height: 8vh;
+                   box-shadow: inset 4px -4px 12px grey,0px 0px 6px 1px white;
+
+                    background: white;
+                    color: BLACK;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+
+                }
+                .block{
+                    display: block;
+                    position: absolute;
+                    bottom: max(20%,10px);
+                    border-radius: 20px 0px 20px 0px;
+                    margin-left: clamp(20px, 6vw, 60px);
+                    padding: 6px 10px;
+                    background: #15305b;
+                    color: white;
+                    font-size: clamp(12px,10vw,30px);
+                    z-index: 1;
+                    font-size: 16px;
+                    height: max-content;
+                    width: max-content;
+                    transition: .25s ease-in all;
+                    cursor: no-drop;
+                    pointer-events: none;
+                }
+                .block:hover{
+                    color: azure;
+                    text-shadow: 2px 2px 6px grey;
+                }
+                .marquee{
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    width: 92dvw;
+                   font-size: clamp(8px,3vw,13px);
+                    justify-content: center;
+                    justify-self: right;
+                }
+                #myVideo{
+                    width: clamp(500px,10vw,600px);
+                    position:relative;
+                    box-sizing: border-box;
+                    padding:0px 20px;
+                    aspect-ratio: 3/2;
+                }
+                .iframe-wrapper::after{
+                    position:absolute;
+                    display:flex;
+                    content:"Macklemore - Can't Hold Us!";
+                    font-size:clamp(12px,3vw,20px);
+                    color:white;
+                    height:100%;
+                    align-items: flex-end;
+                    background:transparent;
+                    width:100%;
+                    z-index:2;
+                   box-sizing: border-box;
+                   padding: 20px 0px;
+                    justify-content:center;
+                    user-select: none;
+              
+                    
+                }
+                 .about{
+                    display: flex;
+                    height: max-content;
+                    padding: 40px 0px;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    background: #15305b;
+                    color: white;
+                    column-gap: 10vw;
+                    flex-wrap: wrap;
+                    
+
+                }
+                .section-1,.section-2{
+                    height: max-content;
+                    width: 500px;
+                    display: flex;
+                  
+                    padding: 0px 20px;
+
+                }
+                .iframe-wrapper{
+                    
+                    align-items: center;
+                    justify-content: center;
+                    height: max-content;
+                    width: max-content;
+                    position: relative;
+                }
+            
+                .intro-wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: justify;
+                    width: 100%;
+                }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <div class="nav-bar">
+            <div class="nav-bar sneeky-loadout-animation">
                 <div class="nav-top">
                     <div class="ntrwrapper">
                         <span class="ico-text nav-links active-links" data-key="phone"><i
@@ -589,7 +719,7 @@
                             <p>Email: schoolsukuna@gmail.com</p>
                         </span>
                     </div>
-                    <div class="ntlwrapper">
+                    <div class="ntlwrapper sneeky-loadout-animation">
                         <div class="c-wrapper" style="column-gap: 10px;">
                             <span class="ico"><i class="fa-brands fa-facebook-f"></i></span>
                             <span class="ico"><i class="fa-brands fa-x-twitter"></i></span>
@@ -608,8 +738,8 @@
                 </div>
 
             </div>
-            <div class="nav-bottom">
-                <div class="navb-container">
+            <div class="nav-bottom sneeky-loadout-animation">
+                <div class="navb-container sneeky-loadout-animation">
                     <img src="logo.png" alt="Logo_space" data-key="image" class="logo">
                     <div class="text-wrapper">
                         <h1>Sukuna Secondary School</h1>
@@ -620,8 +750,8 @@
                 <span class="fa-regular fa-bars item"
                     onclick="document.getElementById('navbarM').style.display='flex';document.getElementById('navbarM').style.animation='slide-in 1s ease-in'"></span>
             </div>
-            <div class="nav-down">
-                <div class="links-wrapper">
+            <div class="nav-down  sneeky-loadout-animation">
+                <div class="links-wrapper sneeky-loadout-animation">
                     <span class="icoNtext" data-link-href="home">
                         <i class="fa-regular fa-home"></i>
                         <p>home</p>
@@ -666,55 +796,46 @@
                 </div>
             </div>
         </div>
-        <div class="main noAnimation"  style="width: 100vw;">
-            <div class="primaryNotice noAnimation">
-                <div class="marquee"><marquee behavior="scroll" direction="left" class="noAnimation" scrollamount="4"><code style="color: red;">july 25<sup>th</sup>, 2026 </code> &nbsp;&nbsp;&nbsp;&nbsp;Due to some reasons, The school is subjected to be closed for few months. Thanks!</marquee></div>
+        <div class="main "  style="width: 100vw;">
+            <div class="primaryNotice ">
+                <div class="marquee"><marquee behavior="scroll" direction="left" class="" scrollamount="8"><code style="color: red;">july 25<sup>th</sup>, 2026 </code> &nbsp;&nbsp;&nbsp;&nbsp;Due to some reasons, The school is subjected to be closed for few months. Thanks!</marquee></div>
                 <div class="block" >Latest Notice</div>
             </div>
             <style>
-                .primaryNotice{
-                    width: 100vw;
-                    height: 8vh;
-                    background: white;
-                    color: BLACK;
-                    align-items: center;
-                    justify-content: center;
-                    position: relative;
-
-                }
-                .block{
-                    display: block;
-                    position: absolute;
-                    bottom: 10px;
-                    margin-left: clamp(20px, 6vw, 60px);
-                    padding: 4px 10px;
-                    background: #15305b;
-                    color: white;
-                    z-index: 1;
-                    font-size: 16px;
-                    height: max-content;
-                    width: max-content;
-                }
-                .marquee{
-                    display: flex;
-                    align-items: center;
-                    height: 100%;
-                    width: 090%;
-                   
-                    justify-content: center;
-                    justify-self: right;
-                }
-
-
+                
             </style>
-            <div class="about">
-                <div class="section-1"></div>
-                <div class="section-2">
-
-                    <div class="iframe-wrapper">
-                       <video tabindex="-1" aria-hidden="true" class="video-stream html5-main-video" webkit-playsinline="" playsinline="" controlslist="nodownload" style="width: 624px; height: 351px; left: 0px; top: 0px;" src="blob:https://www.youtube.com/a0c867d4-8bc7-427b-8518-3ba64b8ad45a"></video>
+            <div class="about" >
+                <div class="section-1" style="display: flex;padding: 30px 20px;">
+                    <div class="intro-wrapper">
+                        <div class="title" >
+                            Sukuna Secondary School
+                        </div>
+                        <div class="description">
+                            सुकुना माध्यमिक विद्यालय (Sukuna Secondary School) २०२९ सालमा स्थापना भएको एक प्रतिष्ठित शैक्षिक संस्था हो। मोरङ जिल्लामा अवस्थित यस विद्यालयले शिक्षाको क्षेत्रमा उल्लेखनीय योगदान गर्दै आएको छ। आधुनिक शैक्षिक प्रणाली, योग्य शिक्षकहरू, र विद्यार्थीहरूको समग्र विकासका लागि उत्कृष्ट वातावरण प्रदान गर्ने लक्ष्यका साथ विद्यालयले बालबालिकाहरूलाई गुणस्तरीय शिक्षा प्रदान गरिरहेको छ।
+                        </div>
                     </div>
                 </div>
+                <div class="section-2">
+                  <div class="iframe-wrapper">
+  <iframe width="500" height="300"
+    src="https://www.youtube.com/embed/2zNSgSzhBfM?start=46&loop=1&playlist=2zNSgSzhBfM&controls=0&modestbranding=1&rel=0&playsinline=1"
+    title="High Hopes - Panic! at the Disco" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    id="myVideo">
+  </iframe>
+</div>
+
+                </div>
+            </div>
+            <div class="carousel">
+            <div class="img-wrapper">
+            <div class="car_img1"></div>
+            <div class="car_img2"></div>
+            <div class="car_img3"></div>
+            <div class="car_img4"></div>
+            <div class="car_img5"></div>
+            <div class="car_img6"></div>
+            </div>
             </div>
         </div>
         <div class="footer">
@@ -733,7 +854,7 @@
             style="width: 100%;justify-content: center;align-items: center;display: flex; color: white;border-bottom: 2px solid black;animation: .25s ease-in all;cursor:pointer;height: 10vh;">
             <i class="fa-regular fa-school" style="margin-right: 10px;"></i>Sukuna Secondary School</div>
 
-        <div class="links-m-wrapper noAnimation">
+        <div class="links-m-wrapper ">
             <span class="icoNtext-m" data-link-href="home">
                 <i class="fa-regular fa-home"></i>
                 <p>home</p>
@@ -778,7 +899,12 @@
         <span class="fa-regular fa-x cross"
             onclick="document.getElementById('navbarM').style.display='none';"></span>
     </div>
+     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
+
+
+ 
+
         const links = {
             "phone": "tel:021-545366",
             "notice-board": "tel:1618021-545717",
@@ -820,13 +946,54 @@
             });
         });
 
-        let nav = document.getElementById("navbarM");
+
+window.addEventListener("resize",()=>{
+    let nav = document.getElementById("navbarM");
+        if(window.innerWidth>1055){
+            nav.style.display='none';
+            console.log("hello");
+        }
+        
+    
+    });
+     let wlc=document.getElementById("wlc_wrapper");
+    if(window.getComputedStyle(wlc).display=="flex"){
+        document.body.style.overflow='hidden';
+    }
+  document.getElementById("ok").addEventListener("click", () => {
+    let iframe = document.getElementById("myVideo");
+    iframe.src += "&autoplay=1";
+
+});
+
+document.getElementById("crx").addEventListener("click", () => {
+    let iframe = document.getElementById("myVideo");
+    iframe.src += "&autoplay=1";
+   
+});
         
       
     </script>
+   <div class="welcome-wrapper" style="height: 100dvh;width: 100dvw;top:0;position: fixed;align-items: center;justify-content: center;display: flex;background: rgba(0, 0, 0, 0.484);backdrop-filter: blur(2px);z-index: 1000;-webkit-backdrop-filter: blur(2px);" id="wlc_wrapper">
+     <div class="welcome" style="display: flex;flex-direction:column;position: fixed;height: max-content;width: clamp(300px,50vw,500px);background: white;z-index: 1000;box-shadow: 0px 0px 6px black;border-radius: 50px 0px 50px 50px;">
+        <div class="top" style="display: flex;flex-direction: row-reverse;width: 100%;">
+            <span class="fa-regular fa-x" style="padding:10px ;box-sizing: border-box;font-size: clamp(12px,1vw,18px);" onclick="setTimeout(()=>{document.getElementById('wlc_wrapper').style.display='none';},100); document.body.style.overflowY='scroll';" id="crx"></span>
+
+        </div>
+        <div class="bottom" style="display: flex;align-items: center;justify-content: center;flex-direction: column;height: 90%;row-gap: 10px;margin-bottom: 10px;">
+            <div class="bottom-t" style="font-size: clamp(16px,3vw,20px);align-items: center;justify-content: center;text-align: center;">
+                Welcome to Sukuna Secondary School!
+            </div>
+            <div class="bottom-m" style="display: flex;align-items: center;justify-content: center;flex-direction: column;height: 80%;align-items: center;justify-content: center;">
+                <p style="text-align: justify;box-sizing: border-box;padding: 0px 20px;font-size: clamp(10px,2vw,14px);">(note: this website is just made for fun by <code style="cursor:pointer;color: rgb(26, 231, 26);" title=" Anup Koirala &#10; A 18 Y.O. boy trying to create his own verse">@anupkoirala0.</code> The infos available in this site are also imaginary. To go to the official website, click on <code style="color: blue;cursor: pointer;" onclick="window.location.href='https://sukunaschool.com.np'" title="GoTo Sukuna's Official Website">Sukuna Secondary School</code>)</p>
+            </div>
+            <div class="bottom-b" style="display: flex;width: 60%;height: 20%;font-size: clamp(10px,2vw,14px);">
+                <div class="button"  style="box-shadow: 2px 2px 6px grey;width: 100%;display: flex;border-radius: 50px;justify-content: center;height: max-content;padding: 2px;user-select:none;cursor:pointer;" onclick="this.style.background='#00ffa0';setTimeout(()=>{document.getElementById('wlc_wrapper').style.display='none';},100); document.body.style.overflowY='scroll';" id="ok">
+                 I agree
+        </div>
+        </div>
+     </div>
+   </div>
 </body>
 
-
 </html>
-
-
